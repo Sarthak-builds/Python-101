@@ -14,3 +14,4 @@ print(fib_gen)  # Output: 0 1 1 2 3 5 8
 
 # Generators can be converted to lists if needed
 print(list(fibonacci_generator(10)))  # Output: [0, 1, 1, 2, 3, 5, 8]
+# python ke baad fastapi krna
