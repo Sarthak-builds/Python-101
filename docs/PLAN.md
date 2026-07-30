@@ -15,7 +15,7 @@ Check items off as we complete them.
 - [ ] Running code: REPL, scripts, `python -m`
 
 ## Module 01 — Foundations
-- [ ] Variables, naming, dynamic typing
+- [x] Variables, naming, dynamic typing
 - [ ] Numbers & arithmetic operators
 - [ ] Strings, string methods, f-strings
 - [ ] Booleans & truthiness
