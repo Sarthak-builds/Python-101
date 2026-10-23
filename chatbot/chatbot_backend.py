@@ -43,6 +43,3 @@ graph.add_edge(START, 'chat_node')
 graph.add_edge('chat_node', END)
 
 chatbot = graph.compile(checkpointer = checkpointer)
-
-chatbot.stream(
-    {'messages': [HumanMessage(content=user_input)]}, config= CONFIG)
