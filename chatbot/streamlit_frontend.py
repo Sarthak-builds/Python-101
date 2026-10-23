@@ -35,7 +35,11 @@ if 'thread_id' not in st.session_state:
 
 add_thread(st.session_state['thread_id'])
 
-CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']}}
+CONFIG = {'configurable': {'thread_id': st.session_state['thread_id']},
+          'metadata': {
+              "thread_id": st.session_state['thread_id']
+          },
+          "run_name": "chat_turn"}
 
 st.sidebar.title('LangGraph Chatbot')
 
@@ -73,7 +77,9 @@ if user_input:
             stream_mode='messages'
         )
         ai_message = st.write_stream(
-            extract_text(chunk.content) for chunk in response if chunk.content
+            extract_text(chunk.content)
+            for chunk, _meta in response
+            if chunk.content
         )
 
     add_message('assistant', ai_message)
