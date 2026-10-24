@@ -5,14 +5,16 @@ from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import operator
-from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.checkpoint.sqlite import SqliteSaver
 
 
 load_dotenv()
 api_key = os.getenv('GOOGLE_API_KEY')
+model_name = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
+db_path = os.getenv('DB_PATH', 'chatbot.db')
 
 model = ChatGoogleGenerativeAI(
-    model = 'gemini-3.1-flash-lite',
+    model = model_name,
     api_key = api_key
 )
 
@@ -34,7 +36,11 @@ def chat_node(state: ChatState):
 
     return {'messages': [response]}    
 
-checkpointer = InMemorySaver()
+import sqlite3
+
+conn = sqlite3.connect(database=db_path, check_same_thread=False)
+
+checkpointer = SqliteSaver(conn)
 graph = StateGraph(ChatState)
 
 graph.add_node('chat_node',chat_node)
