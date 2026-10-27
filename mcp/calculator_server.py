@@ -1,19 +1,20 @@
-from fastmcp import FastMCP
+from typing import Literal
 
+from fastmcp import FastMCP
 
 mcp = FastMCP("calculator-server")
 
 
 @mcp.tool
-async def calculator(first_num: float, second_num: float, operation: str) -> dict:
+async def calculator(
+    first_num: float,
+    second_num: float,
+    operation: Literal["add", "subtract", "multiply", "divide"],
+) -> dict:
     """Perform a basic arithmetic operation on two numbers.
 
     Supported operations: add, subtract, multiply, divide.
     """
-    import asyncio
-
-    await asyncio.sleep(0)  # yield control, async-safe point
-
     try:
         if operation == "add":
             result = first_num + second_num
