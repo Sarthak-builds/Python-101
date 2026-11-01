@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.100
+Fine-tuning versus prompting versus RAG. Which one do you actually need? Let's settle this once and for all.
+
+00:00:06.100 --> 00:00:13.500
+Start with the decision framework. If the model lacks knowledge, use RAG. If it lacks behavior, consider fine-tuning.
+
+00:00:13.500 --> 00:00:20.900
+RAG injects facts at inference time. Fine-tuning changes the weights. They solve different problems.
+
+00:00:20.900 --> 00:00:28.300
+Fine-tuning is great for style, tone, output format, and domain terminology. It is bad at teaching facts.
+
+00:00:28.300 --> 00:00:35.700
+Fine-tuned models quickly forget facts or hallucinate outdated ones. Knowledge is better stored externally.
+
+00:00:35.700 --> 00:00:43.100
+For most teams the right ladder is: prompt engineering first, then RAG, then fine-tuning only if needed.
+
+00:00:43.100 --> 00:00:50.500
+LoRA makes fine-tuning cheap. Instead of updating all weights, you train small low-rank adapter matrices.
+
+00:00:50.500 --> 00:00:57.900
+A single adapter is a few megabytes. You can hot-swap adapters per customer on the same base model.
+
+00:00:57.900 --> 00:01:05.300
+QLoRA quantizes the base model to four bits and trains LoRA on top, fitting on a single consumer GPU.
+
+00:01:05.300 --> 00:01:12.700
+Quality versus QLoRA full fine-tuning is surprisingly close for most practical tasks.
+
+00:01:12.700 --> 00:01:20.100
+Data quality beats data quantity. One thousand clean, diverse, well-labeled examples outperform ten thousand messy ones.
+
+00:01:20.100 --> 00:01:27.500
+Always evaluate on a held-out set that mirrors production conditions, or your gains are imaginary.
+
+00:01:27.500 --> 00:01:35.000
+But here is the trap: after fine-tuning, your chat product may feel smoother while still being wrong.
+
+00:01:35.000 --> 00:01:42.400
+Fine-tuning changes the vibe. RAG supplies facts. Evaluation tells you which one your product actually needs.

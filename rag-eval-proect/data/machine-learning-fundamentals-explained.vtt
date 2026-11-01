@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.600
+Machine learning fundamentals in fifteen minutes. Let's build the mental model everything else sits on.
+
+00:00:05.600 --> 00:00:12.800
+Supervised learning means learning from labeled examples. You have inputs X and targets y.
+
+00:00:12.800 --> 00:00:19.900
+Classification predicts a category like spam or not spam. Regression predicts a continuous number like price.
+
+00:00:19.900 --> 00:00:27.100
+The core workflow: split your data into train, validation, and test sets. Never leak test data into training.
+
+00:00:27.100 --> 00:00:34.400
+The model learns parameters by minimizing a loss function through gradient descent.
+
+00:00:34.400 --> 00:00:41.700
+Overfitting is when the model memorizes training data and fails on new data. Watch the validation score.
+
+00:00:41.700 --> 00:00:48.900
+Regularization like L2 weight decay, dropout, and early stopping all fight overfitting.
+
+00:00:48.900 --> 00:00:56.100
+Cross-validation rotates which fold is the validation set, giving you a more reliable performance estimate.
+
+00:00:56.100 --> 00:01:03.600
+Bias variance trade-off: simple models underfit with high bias, complex models overfit with high variance.
+
+00:01:03.600 --> 00:01:10.800
+Feature engineering still matters. Garbage in, garbage out applies even to deep learning.
+
+00:01:10.800 --> 00:01:18.100
+Evaluation metrics must match your problem. Accuracy lies on imbalanced data; use precision, recall, and F1.
+
+00:01:18.100 --> 00:01:25.400
+For ranking problems, mean average precision and NDCG are the standard choices.
+
+00:01:25.400 --> 00:01:32.700
+Start simple: logistic regression and gradient boosted trees are strong baselines before neural networks.
+
+00:01:32.700 --> 00:01:40.000
+If a simple baseline matches your complex model, ship the simple model. Complexity is a cost.

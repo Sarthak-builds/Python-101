@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.300
+Today we're demystifying vector databases, the storage layer behind semantic search and RAG systems.
+
+00:00:06.300 --> 00:00:13.500
+A vector database stores high-dimensional float arrays called embeddings, and finds similar vectors fast.
+
+00:00:13.500 --> 00:00:20.400
+Why not just use Postgres? Postgres with pgvector works surprisingly well up to a few million vectors.
+
+00:00:20.400 --> 00:00:27.900
+But at tens of millions of vectors with strict latency budgets, specialized indexes like HNSW win.
+
+00:00:27.900 --> 00:00:34.800
+HNSW is a hierarchical graph. Build time is slower, but queries hop through the graph in logarithmic time.
+
+00:00:34.800 --> 00:00:41.600
+The trade-off is memory. HNSW graphs can consume several times the raw size of your vectors.
+
+00:00:41.600 --> 00:00:48.200
+IVF is the other big family. It clusters vectors into buckets and searches only the nearest buckets.
+
+00:00:48.200 --> 00:00:55.100
+Tune the probe parameter to balance recall against speed. More probes means higher recall, more latency.
+
+00:00:55.100 --> 00:01:02.400
+Distance metrics matter. Cosine similarity ignores magnitude, dot product rewards larger norms, L2 is euclidean.
+
+00:01:02.400 --> 00:01:09.700
+For most text search, cosine similarity or normalized dot product is the right default choice.
+
+00:01:09.700 --> 00:01:16.900
+Metadata filtering is essential for production. You'll want to filter by tenant, date, or document type.
+
+00:01:16.900 --> 00:01:24.100
+Pre-filtering narrows candidates before the ANN search, while post-filtering risks empty result sets.
+
+00:01:24.100 --> 00:01:31.300
+Popular options: Pinecone is fully managed, Qdrant is fast and self-hostable, Weaviate has hybrid search built in.
+
+00:01:31.300 --> 00:01:38.500
+Also consider Milvus for sheer scale, and pgvector when you want one database for everything.
+
+00:01:38.500 --> 00:01:45.700
+Benchmark against your own data. Consensus is that vendor marketing numbers rarely match reality.

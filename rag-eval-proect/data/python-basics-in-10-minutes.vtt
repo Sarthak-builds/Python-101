@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.120
+Hey everyone, welcome back to the channel. Today we're going to learn Python basics in just ten minutes.
+
+00:00:04.120 --> 00:00:09.480
+Python is a high-level, interpreted language known for its readable syntax and massive ecosystem.
+
+00:00:09.480 --> 00:00:15.900
+First, let's talk about variables. In Python, you don't need to declare types. Just write name equals Alice.
+
+00:00:15.900 --> 00:00:22.340
+Python will infer that it's a string. The same works for integers, floats, and booleans.
+
+00:00:22.340 --> 00:00:29.700
+Lists are Python's go-to collection. You can create one with square brackets and slice it with colons.
+
+00:00:29.700 --> 00:00:36.250
+For example, my list of zero to three returns the first three elements. Slicing is everywhere in Python code.
+
+00:00:36.250 --> 00:00:43.100
+Dictionaries store key value pairs. They're used constantly in APIs, configuration, and data processing.
+
+00:00:43.100 --> 00:00:50.800
+Functions are defined with the def keyword. Keep them small, name them clearly, and document with docstrings.
+
+00:00:50.800 --> 00:00:57.300
+Control flow is simple: if, elif, else. Indentation matters here, four spaces is the community standard.
+
+00:00:57.300 --> 00:01:03.650
+Loops: for item in my list. You can also loop over dictionaries with items to get keys and values together.
+
+00:01:03.650 --> 00:01:09.900
+List comprehensions let you transform lists in one line. They're fast, readable, and very Pythonic.
+
+00:01:09.900 --> 00:01:16.400
+When something goes wrong, Python raises exceptions. Use try and except blocks to handle them gracefully.
+
+00:01:16.400 --> 00:01:23.150
+Modules are just Python files. Import what you need, and pip install anything from the package index.
+
+00:01:23.150 --> 00:01:30.000
+That covers the fundamentals. If you want the full beginner series, check the playlist linked below.

@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.800
+Transformers changed everything. Thirty minutes to actually understand them, no math degree required.
+
+00:00:05.800 --> 00:00:13.100
+The key insight from the 2017 paper: attention is all you need. Recurrence is not necessary.
+
+00:00:13.100 --> 00:00:20.300
+Attention lets every token look at every other token directly. Context travels in one hop, not many.
+
+00:00:20.300 --> 00:00:27.500
+Self attention computes three things per token: a query, a key, and a value vector.
+
+00:00:27.500 --> 00:00:34.700
+The query asks what am I looking for. Keys advertise what each token offers. Values carry the content.
+
+00:00:34.700 --> 00:00:42.000
+Dot the query against every key, softmax the scores, and take a weighted sum of the values.
+
+00:00:42.000 --> 00:00:49.200
+Multiple attention heads run in parallel, each learning a different relationship pattern.
+
+00:00:49.200 --> 00:00:56.500
+Positional information is injected with rotary embeddings in most modern architectures.
+
+00:00:56.500 --> 00:01:03.800
+GPT style models are decoder only: each token predicts the next one, trained on internet scale text.
+
+00:01:03.800 --> 00:01:11.000
+Causal masking prevents tokens from seeing the future during training. That's what enables text generation.
+
+00:01:11.000 --> 00:01:18.300
+Scaling laws showed that more parameters, more data, and more compute predictably improve loss.
+
+00:01:18.300 --> 00:01:25.500
+After pretraining, instruction tuning and RLHF align the model toward helpful, safe behavior.
+
+00:01:25.500 --> 00:01:32.700
+Inference is incremental: the model generates one token at a time, feeding output back as input.
+
+00:01:32.700 --> 00:01:40.000
+KV cache makes this fast by storing past keys and values instead of recomputing them each step.

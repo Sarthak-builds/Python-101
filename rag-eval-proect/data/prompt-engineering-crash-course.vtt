@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:05.900
+Welcome to a prompt engineering crash course. These techniques apply to any capable modern model.
+
+00:00:05.900 --> 00:00:12.700
+Rule one: be specific. Vague prompts get vague answers. State the role, the task, and the constraints.
+
+00:00:12.700 --> 00:00:19.400
+Rule two: give examples. Two to five demonstrations of the desired pattern beat paragraphs of description.
+
+00:00:19.400 --> 00:00:26.200
+This is called few-shot prompting and it's still one of the most reliable accuracy boosts available.
+
+00:00:26.200 --> 00:00:33.000
+Rule three: ask for structured output. Say return JSON with these exact keys, and validate programmatically.
+
+00:00:33.000 --> 00:00:39.800
+Chain of thought prompting asks the model to reason step by step before answering.
+
+00:00:39.800 --> 00:00:46.500
+It costs more tokens but meaningfully improves math, logic, and multi-step reasoning tasks.
+
+00:00:46.500 --> 00:00:53.200
+For RAG specifically, always instruct the model to answer only from the provided context.
+
+00:00:53.200 --> 00:01:00.000
+And tell it to say I don't know when the answer isn't in the context. Faithfulness improves dramatically.
+
+00:01:00.000 --> 00:01:06.800
+System prompts set behavior. User turns carry the task. Keep the system prompt stable for caching benefits.
+
+00:01:06.800 --> 00:01:13.500
+Temperature controls randomness. Use zero for extraction and classification, higher values for creative work.
+
+00:01:13.500 --> 00:01:20.300
+Prompt versioning: store prompts in files, track changes, and evaluate each change on a fixed test set.
+
+00:01:20.300 --> 00:01:27.100
+Never eyeball prompt quality on one example. You need dozens of cases to see real differences.
+
+00:01:27.100 --> 00:01:33.900
+That's the core toolkit. Specificity, examples, structure, and measured evaluation.

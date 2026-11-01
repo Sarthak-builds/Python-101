@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.400
+Building data pipelines that don't fall over at 2 AM. Real world lessons from five years of ETL work.
+
+00:00:06.400 --> 00:00:13.800
+A data pipeline moves data from sources through transformation into a warehouse or lake.
+
+00:00:13.800 --> 00:00:21.200
+The first rule: idempotency. Rerunning your pipeline twice should produce exactly the same result.
+
+00:00:21.200 --> 00:00:28.500
+Without idempotency, every retry duplicates data and your counts are silently wrong.
+
+00:00:28.500 --> 00:00:35.900
+Second rule: partition everything. Partition by date so you can rerun a single day cheaply.
+
+00:00:35.900 --> 00:00:43.300
+Slowly changing dimensions: when a customer changes address, do you overwrite history or keep both?
+
+00:00:43.300 --> 00:00:50.700
+Type 2 SCD keeps the old row with valid from and to dates. Analytics memory depends on it.
+
+00:00:50.700 --> 00:00:58.100
+Airflow, Dagster, and Prefect are the main orchestrators. All three solve scheduling and retries.
+
+00:00:58.100 --> 00:01:05.400
+Modern ELT flips the script: load raw data first, transform inside the warehouse with dbt.
+
+00:01:05.400 --> 00:01:12.900
+dbt brings software engineering to SQL: version control, testing, and documentation for your models.
+
+00:01:12.900 --> 00:01:20.300
+Data quality checks are non-negotiable: nulls in key columns, unexpected row counts, freshness tests.
+
+00:01:20.300 --> 00:01:27.600
+Alerting beats dashboards. Nobody stares at a dashboard; failed pipelines need to page someone.
+
+00:01:27.600 --> 00:01:35.000
+Backfills will happen. Design your pipeline so you can replay last month with one command.
+
+00:01:35.000 --> 00:01:42.200
+Document lineage so when someone asks where does this number come from, you can answer in one click.

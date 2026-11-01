@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:06.200
+Today: embeddings and semantic search, the technology that lets machines understand meaning, not keywords.
+
+00:00:06.200 --> 00:00:13.400
+An embedding is a list of numbers, usually 384 to 3072 long, that represents what a text means.
+
+00:00:13.400 --> 00:00:20.700
+Texts with similar meanings land close together in embedding space, even with zero shared words.
+
+00:00:20.700 --> 00:00:27.900
+That's why how do I reset my password matches with password recovery help, but not with keyword search.
+
+00:00:27.900 --> 00:00:35.100
+Similarity is computed with cosine similarity, the cosine of the angle between the two vectors.
+
+00:00:35.100 --> 00:00:42.080
+A score of one means identical direction, zero means unrelated, negative means opposite meaning.
+
+00:00:42.080 --> 00:00:49.300
+Choosing an embedding model, look at the MTEB leaderboard on Hugging Face for benchmarks on real tasks.
+
+00:00:49.300 --> 00:00:56.400
+Dimensions affect storage and speed. Smaller models with 384 dimensions are often good enough.
+
+00:00:56.400 --> 00:01:03.700
+Normalized embeddings let you use dot product as cosine similarity, which is faster in practice.
+
+00:01:03.700 --> 00:01:10.900
+Beware: embedding models are trained on specific kinds of text. A code model won't do well on poetry.
+
+00:01:10.900 --> 00:01:18.200
+When you switch embedding models, you must re-embed your entire corpus. Plan for that migration cost.
+
+00:01:18.200 --> 00:01:25.400
+Chunk-level embeddings lose context. Prefixing chunks with document titles helps retrieval quality a lot.
+
+00:01:25.400 --> 00:01:32.600
+Semantic search evaluation: build pairs of queries and known relevant documents, then measure recall.
+
+00:01:32.600 --> 00:01:40.000
+That golden evaluation set is your ground truth for every future improvement you experiment with.
