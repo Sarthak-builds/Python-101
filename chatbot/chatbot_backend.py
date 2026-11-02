@@ -11,6 +11,11 @@ from langgraph.graph import END, START, StateGraph, add_messages
 load_dotenv()
 
 api_key = os.getenv('GOOGLE_API_KEY')
+if not api_key:
+    raise RuntimeError(
+        'GOOGLE_API_KEY is not set. Add it to your .env file '
+        '(see README.md) before starting the chatbot.'
+    )
 model_name = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
 db_path = os.getenv('DB_PATH', 'chatbot.db')
 
