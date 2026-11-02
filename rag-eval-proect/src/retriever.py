@@ -63,6 +63,10 @@ def load_store():
         db = Chroma(persist_directory=str(DB_DIR), embedding_function=embeddings)
         return db
     docs = load_transcripts()
+    if not docs:
+        raise FileNotFoundError(
+            f"No .vtt transcripts found in {DATA_DIR}; cannot build the store."
+        )
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     chunks = splitter.split_documents(docs)
     db = Chroma.from_documents(
