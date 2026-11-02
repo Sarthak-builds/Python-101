@@ -9,11 +9,13 @@ mcp = FastMCP("calculator-server")
 async def calculator(
     first_num: float,
     second_num: float,
-    operation: Literal["add", "subtract", "multiply", "divide"],
+    operation: Literal[
+        "add", "subtract", "multiply", "divide", "power", "modulo"
+    ],
 ) -> dict:
     """Perform a basic arithmetic operation on two numbers.
 
-    Supported operations: add, subtract, multiply, divide.
+    Supported operations: add, subtract, multiply, divide, power, modulo.
     """
     try:
         if operation == "add":
@@ -24,10 +26,15 @@ async def calculator(
             result = first_num * second_num
         elif operation == "divide":
             result = first_num / second_num
+        elif operation == "power":
+            result = first_num**second_num
+        elif operation == "modulo":
+            result = first_num % second_num
         else:
             return {
                 "error": f"Unsupported operation: {operation}. "
-                "Supported operations are add, subtract, multiply, divide."
+                "Supported operations are add, subtract, multiply, divide, "
+                "power, modulo."
             }
         return {
             "first_num": first_num,
