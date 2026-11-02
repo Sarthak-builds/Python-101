@@ -15,3 +15,23 @@ Learning playground for LangGraph / LangChain / LangSmith workflows with Gemini 
 1. Create `.env` with `GOOGLE_API_KEY` (and/or `OPENAI_API_KEY`) — never commit it
 2. `docker compose up -d postgres` when running `shortTermMemory.ipynb`
 3. Use the bundled `venv/` python (`venv\Scripts\python.exe`) for Jupyter
+
+## Usage
+
+Run the Streamlit chatbot (backend + frontend together):
+
+```bash
+streamlit run chatbot/streamlit_frontend.py
+```
+
+Start the MCP calculator server:
+
+```bash
+python mcp/calculator_server.py
+```
+
+Build/inspect the RAG retriever over the YouTube transcripts:
+
+```bash
+python rag-eval-proect/src/retriever.py
+```
