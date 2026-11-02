@@ -83,5 +83,10 @@ if user_input:
             if chunk.content
         )
 
+    if not ai_message.strip():
+        ai_message = 'Sorry, I could not generate a response. Please try again.'
+        with st.chat_message('assistant'):
+            st.write(ai_message)
+
     # the streamed reply is already on screen; only record it in history
     add_message('assistant', ai_message)
