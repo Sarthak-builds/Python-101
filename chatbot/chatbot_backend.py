@@ -1,5 +1,6 @@
 import os
 import sqlite3
+from pathlib import Path
 from typing import Annotated, TypedDict
 
 from dotenv import load_dotenv
@@ -18,6 +19,7 @@ if not api_key:
     )
 model_name = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
 db_path = os.getenv('DB_PATH', 'chatbot.db')
+Path(db_path).parent.mkdir(parents=True, exist_ok=True)
 
 model = ChatGoogleGenerativeAI(
     model=model_name,
