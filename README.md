@@ -30,7 +30,9 @@ Start the MCP calculator server:
 python mcp/calculator_server.py
 ```
 
-Build/inspect the RAG retriever over the YouTube transcripts:
+Supported operations: `add`, `subtract`, `multiply`, `divide`, `power`, `modulo`, `floor_divide`.
+
+Build/inspect the RAG retriever over the YouTube transcripts (chunking is tunable via `CHUNK_SIZE` and `CHUNK_OVERLAP`):
 
 ```bash
 python rag-eval-proect/src/retriever.py
