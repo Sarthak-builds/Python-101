@@ -49,8 +49,11 @@ if st.sidebar.button('New Chat'):
     reset_chat()
 
 st.sidebar.header('My Conversations')
-for thread_id in st.session_state['chat_threads'][:MAX_THREADS_SHOWN]:
+shown = st.session_state['chat_threads'][:MAX_THREADS_SHOWN]
+for thread_id in shown:
     st.sidebar.write(thread_id[:8])
+total = len(st.session_state['chat_threads'])
+st.sidebar.caption(f'Showing {len(shown)} of {total} conversations')
 
 st.title('Chat')
 
