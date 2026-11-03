@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import re
 
 from langchain_core.documents import Document
@@ -67,7 +68,10 @@ def load_store():
         raise FileNotFoundError(
             f"No .vtt transcripts found in {DATA_DIR}; cannot build the store."
         )
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=int(os.getenv("CHUNK_SIZE", "1000")),
+        chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "200")),
+    )
     chunks = splitter.split_documents(docs)
     db = Chroma.from_documents(
         chunks,
